@@ -12,10 +12,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("App Title")),
-      body: Container(color: Colors.yellow),
-      drawer: Drawer(child: Container(color: Colors.red)),
-    );
+        appBar: AppBar(title: Text("App Title")),
+        body: Container(color: Colors.white),
+        drawer: Drawer(
+          child: ListView(padding: EdgeInsets.zero, children: [
+            DrawerHeader(
+              child: Text('A',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold)),
+              decoration: BoxDecoration(color: Colors.red),
+            ),
+            Text("data"),
+          ]),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.edit),
+        ));
   }
 }
 
