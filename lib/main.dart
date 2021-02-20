@@ -16,15 +16,32 @@ class HomePage extends StatelessWidget {
         body: Container(color: Colors.white),
         drawer: Drawer(
           child: ListView(padding: EdgeInsets.zero, children: [
-            DrawerHeader(
-              child: Text('A',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold)),
-              decoration: BoxDecoration(color: Colors.red),
+            UserAccountsDrawerHeader(
+                currentAccountPicture: Image.network(
+                    'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8dXNlcnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60'),
+                accountName: Text("Account"),
+                accountEmail: Text("xyz@gmail.com")),
+
+            // DrawerHeader(
+            //   child: Text('A',
+            //       style: TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 24,
+            //           fontWeight: FontWeight.bold)),
+            //   decoration: BoxDecoration(color: Colors.red),
+            // ),
+            ListTile(
+              leading: Icon(Icons.person),
+              title: Text('Account'),
+              subtitle: Text('Personal'),
+              trailing: Icon(Icons.edit),
             ),
-            Text("data"),
+            ListTile(
+              leading: Icon(Icons.email),
+              title: Text('Email'),
+              subtitle: Text('abc@gmail.com'),
+              trailing: Icon(Icons.email),
+            ),
           ]),
         ),
         floatingActionButton: FloatingActionButton(
