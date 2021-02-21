@@ -19,7 +19,6 @@ class ChangeNameCard extends StatelessWidget {
           Image.asset(
             'assets/bg.jpeg',
             fit: BoxFit.fill,
-            height: 350,
           ),
           SizedBox(
               height: 30,
