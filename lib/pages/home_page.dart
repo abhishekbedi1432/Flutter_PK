@@ -46,8 +46,9 @@ class _HomePageState extends State<HomePage> {
                     return Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
-                          color: Colors.amber,
+                          // color: Colors.tealAccent,
                           child: ListTile(
+                              leading: Image.network(data[index]['url']),
                               title: Text(
                                   '${data[index]['id']}. ${data[index]['title']}'))),
                     );
