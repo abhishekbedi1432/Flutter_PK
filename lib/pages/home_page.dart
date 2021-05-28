@@ -89,7 +89,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
-                    onTap: onRefreshPressed,s
+                    onTap: onRefreshPressed,
                     child: viewType == ViewType.grid
                         ? Icon(Icons.view_list)
                         : Icon(Icons.grid_view))),
