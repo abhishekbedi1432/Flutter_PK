@@ -6,6 +6,6 @@ void main() {
   runApp(MaterialApp(
     title: "My App",
     theme: ThemeData(primarySwatch: Colors.purple),
-    home: HomePage(), // LoginPage(),
+    home: LoginPage(),
   ));
 }
