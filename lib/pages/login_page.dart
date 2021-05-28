@@ -58,8 +58,9 @@ class LoginCard extends StatelessWidget {
               SizedBox(height: 50),
               RaisedButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.pushNamed(context, '/home');
                 },
                 child: Text('Sign In'),
                 color: Colors.redAccent,

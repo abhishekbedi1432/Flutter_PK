@@ -7,5 +7,9 @@ void main() {
     title: "My App",
     theme: ThemeData(primarySwatch: Colors.purple),
     home: LoginPage(),
+    routes: {
+      '/login': (context) => LoginPage(),
+      '/home': (context) => HomePage(),
+    },
   ));
 }
