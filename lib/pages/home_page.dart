@@ -3,6 +3,7 @@ import 'dart:convert';
 // import 'package:my_app/change_name_card.dart';
 // import 'package:my_app/drawer.dart';
 import 'package:http/http.dart' as http;
+import 'package:my_app/utils/Constants.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -93,6 +94,10 @@ class _HomePageState extends State<HomePage> {
                     child: viewType == ViewType.grid
                         ? Icon(Icons.view_list)
                         : Icon(Icons.grid_view))),
+            Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                    onTap: logout, child: Icon(Icons.exit_to_app))),
           ],
         ),
         body: body);
@@ -102,8 +107,10 @@ class _HomePageState extends State<HomePage> {
     viewType = viewType == ViewType.list ? ViewType.grid : ViewType.list;
     print(viewType);
     setState(() {});
+  }
 
-    // print('Refresh Pressed!');
-    // getData();
+  void logout() {
+    Constants.prefs.setBool('isLoggedIn', false);
+    Navigator.pushReplacementNamed(context, '/login');
   }
 }

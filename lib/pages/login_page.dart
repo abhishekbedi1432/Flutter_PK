@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/bg_Image.dart';
+import 'package:my_app/utils/Constants.dart';
 // import 'package:my_app/main.dart';
 
 // import 'home_page.dart';
@@ -60,7 +61,8 @@ class LoginCard extends StatelessWidget {
                 onPressed: () {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => HomePage()));
-                  Navigator.pushNamed(context, '/home');
+                  Constants.prefs.setBool('isLoggedIn', true);
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: Text('Sign In'),
                 color: Colors.redAccent,
