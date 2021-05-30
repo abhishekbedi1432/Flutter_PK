@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
         gridDelegate:
             SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         padding: const EdgeInsets.all(8),
-        itemCount: data.length,
+        itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.all(10.0),
@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
 // Listview Layout
     var listView = ListView.builder(
         padding: const EdgeInsets.all(8),
-        itemCount: data.length,
+        itemCount: data == null ? 0 : data.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.all(10.0),
