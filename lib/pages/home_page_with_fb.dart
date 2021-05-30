@@ -20,11 +20,16 @@ class HomePageFB extends StatelessWidget {
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
+              print('ConnectionState.none');
               return Center(child: Text('Fetch Something'));
             case ConnectionState.active:
+              print('ConnectionState.active');
+              return Center(child: Text('Fetching ...'));
             case ConnectionState.waiting:
+              print('ConnectionState.waiting');
               return Center(child: CircularProgressIndicator());
             case ConnectionState.done:
+              print('ConnectionState.done');
               if (snapshot.hasError) {
                 return Center(child: Text('Some Error Occurred!'));
               } else {
