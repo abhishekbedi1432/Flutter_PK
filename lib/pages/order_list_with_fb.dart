@@ -53,12 +53,11 @@ class OrderListFB extends StatelessWidget {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text("Order List"),
-          leading: GestureDetector(
-            onTap: () {/* Write listener code here */},
-            child: Icon(
-              Icons.menu, // add custom icons also
-            ),
+          title: Text("Returns and Refunds"),
+          automaticallyImplyLeading: true,
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () => Navigator.pop(context, false),
           ),
           actions: <Widget>[
             Padding(
@@ -80,14 +79,104 @@ class OrderListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var boxDecoration = BoxDecoration(
+        color: HexColor('#ECF4FD'),
+        border: Border.all(
+          color: Colors.red[500],
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(20)));
+
     return Container(
-      height: 100,
-      decoration: BoxDecoration(
-          color: HexColor('#ECF4FD'),
-          border: Border.all(
-            color: Colors.red[500],
+        width: MediaQuery.of(context).size.width,
+        padding: const EdgeInsets.only(top: 10.0),
+        decoration: boxDecoration,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              LeftRightTextWidget(
+                leftText: 'Return Number: 123',
+                rightText: 'Return Date: July 15, 2021',
+              ),
+              ReportedItemsWidget()
+            ],
           ),
-          borderRadius: BorderRadius.all(Radius.circular(20))),
+        ));
+  }
+}
+
+class ReportedItemsWidget extends StatelessWidget {
+  const ReportedItemsWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    var boxDecoration = BoxDecoration(
+        color: HexColor('#FFFFFF'),
+        border: Border.all(
+          color: Colors.red[200],
+        ),
+        borderRadius: BorderRadius.all(Radius.circular(20)));
+
+    return Container(
+      // height: 230,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height / 2,
+      padding: const EdgeInsets.all(20.0),
+      decoration: boxDecoration,
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Text(
+          "Reported Items",
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        LeftRightTextWidget(
+          leftText: 'Order Number: 123',
+          rightText: 'Order Date: July 15, 2021',
+        ),
+      ]),
+    );
+  }
+}
+
+class LeftRightTextWidget extends StatelessWidget {
+  String leftText = "";
+  String rightText = "";
+
+  LeftRightTextWidget({
+    Key key,
+    @required this.leftText,
+    @required this.rightText,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40,
+      child: Row(
+        children: [Text("$leftText"), Spacer(), Text("$rightText")],
+      ),
+    );
+  }
+}
+
+class ReturnStatusWidget extends StatelessWidget {
+  // String iconUrl = "";
+  String returnStatus = "";
+
+  ReturnStatusWidget({
+    Key key,
+    // @required this.iconUrl,
+    @required this.returnStatus,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 40,
+      child: Row(
+        children: [Text("$iconUrl"), Spacer(), Text("$returnStatus")],
+      ),
     );
   }
 }
