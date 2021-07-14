@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:my_app/utils/Constants.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class OrderListFB extends StatelessWidget {
   Future getData() async {
@@ -82,7 +83,7 @@ class OrderListItem extends StatelessWidget {
     return Container(
       height: 100,
       decoration: BoxDecoration(
-          color: Color(0xffECF4FD),
+          color: HexColor('#ECF4FD'),
           border: Border.all(
             color: Colors.red[500],
           ),
