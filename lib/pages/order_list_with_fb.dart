@@ -134,6 +134,9 @@ class ReportedItemsWidget extends StatelessWidget {
           leftText: 'Order Number: 123',
           rightText: 'Order Date: July 15, 2021',
         ),
+        ReturnStatusWidget(
+          returnStatus: 'Return Initiated',
+        ),
       ]),
     );
   }
@@ -175,7 +178,13 @@ class ReturnStatusWidget extends StatelessWidget {
     return SizedBox(
       height: 40,
       child: Row(
-        children: [Text("$iconUrl"), Spacer(), Text("$returnStatus")],
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Image.network(
+              'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl-2.jpg'),
+          // Spacer(flex: 10),
+          Text("$returnStatus")
+        ],
       ),
     );
   }
