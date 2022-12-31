@@ -14,9 +14,10 @@ Future main() async {
     debugShowCheckedModeBanner: false,
     title: "My App",
     theme: ThemeData(primarySwatch: Colors.purple),
-    home: Constants.prefs.getBool('isLoggedIn') == true
-        ? LoginPage()
-        : OrderListFB(),
+    home: HomePage(),
+    // Constants.prefs.getBool('isLoggedIn') == true
+    //     ? LoginPage()
+    //     : OrderListFB(),
     routes: {
       '/login': (context) => LoginPage(),
       '/home': (context) => OrderListFB(),

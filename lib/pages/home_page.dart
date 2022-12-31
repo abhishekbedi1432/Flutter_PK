@@ -91,9 +91,7 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                     onTap: onRefreshPressed,
-                    child: viewType == ViewType.grid
-                        ? Icon(Icons.view_list)
-                        : Icon(Icons.grid_view))),
+                    child: getListOrGridIcon(viewType))),
             Padding(
                 padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
@@ -112,5 +110,11 @@ class _HomePageState extends State<HomePage> {
   void logout() {
     Constants.prefs.setBool('isLoggedIn', false);
     Navigator.pushReplacementNamed(context, '/login');
+  }
+
+  Icon getListOrGridIcon(ViewType type) {
+    return type == ViewType.grid
+        ? Icon(Icons.view_list)
+        : Icon(Icons.grid_view);
   }
 }
